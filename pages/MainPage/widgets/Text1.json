@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 27,
+  "bottomRow": 20,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -18,7 +18,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "xnkzpqsq8p",
-  "leftColumn": 22,
+  "leftColumn": 20,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -27,8 +27,8 @@
   "mobileRightColumn": 38,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 27,
-  "originalTopRow": 22,
+  "originalBottomRow": 20,
+  "originalTopRow": 15,
   "overflow": "NONE",
   "parentColumnSpace": 20.25,
   "parentId": "0",
@@ -40,7 +40,7 @@
   "text": "Que souhaitez vous faire ?",
   "textAlign": "CENTER",
   "textColor": "#231F20",
-  "topRow": 22,
+  "topRow": 15,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 66,
+  "bottomRow": 69,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -40,12 +40,15 @@
     "places_restantes",
     "nom",
     "telephone",
-    "email"
+    "email",
+    "customColumn1"
   ],
-  "columnUpdatedAt": 1793705976599,
+  "columnUpdatedAt": 1794399578793,
   "columnWidthMap": {
+    "date_depart": 186,
     "lieu_arrivee": 129,
-    "lieu_depart": 112
+    "lieu_depart": 112,
+    "prenom": 150
   },
   "compactMode": "TALL",
   "customIsLoading": false,
@@ -95,6 +98,15 @@
     },
     {
       "key": "primaryColumns.email.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn1.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -103,7 +115,11 @@
       "key": "tableData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.customColumn1.onClick"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -114,23 +130,63 @@
   "isVisible": true,
   "isVisibleDownload": false,
   "isVisibleFilters": false,
-  "isVisiblePagination": true,
+  "isVisiblePagination": false,
   "isVisibleSearch": false,
   "key": "1ldxvqajqm",
   "label": "Data",
-  "leftColumn": 15,
+  "leftColumn": 11,
   "minWidth": 450,
   "mobileBottomRow": 68,
   "mobileLeftColumn": 15,
   "mobileRightColumn": 49,
   "mobileTopRow": 40,
   "needsErrorInfo": false,
-  "originalBottomRow": 66,
-  "originalTopRow": 38,
+  "originalBottomRow": 69,
+  "originalTopRow": 35,
   "parentColumnSpace": 17.9375,
   "parentId": "0",
   "parentRowSpace": 10,
   "primaryColumns": {
+    "customColumn1": {
+      "alias": "Contacter",
+      "allowCellWrapping": false,
+      "allowHeaderWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{Trajets_table.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{Trajets_table.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{Trajets_table.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "send-message",
+      "id": "customColumn1",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Contacter",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{showModal(ContactModal.name).then(() => {});}}",
+      "originalId": "customColumn1",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "date_depart": {
       "alias": "date_depart",
       "allowCellWrapping": false,
@@ -450,11 +506,11 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 45,
+  "rightColumn": 50,
   "searchKey": "",
   "tableData": "{{Chercher_trajets.data}}",
   "textSize": "0.875rem",
-  "topRow": 38,
+  "topRow": 35,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

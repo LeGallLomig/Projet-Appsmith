@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT id, email, password_hash, ecole, nom, prenom, telephone, created_at FROM public.users LIMIT 3;",
+      "body": "SELECT id, nom, prenom, email, telephone, ecole, created_at\nFROM public.users\nWHERE id = {{ appsmith.store.userId }}::integer;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,11 @@
       "name": "CovoiturageBDD",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "MonProfil_query",
     "pageId": "ProfilPage",
     "runBehaviour": "AUTOMATIC",

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO trajets (conducteur_id, lieu_depart, lieu_arrivee, date_depart, nb_places, places_restantes, statut)\nVALUES (\n  {{ appsmith.store.userId }},\n  {{ Depart_input.text }},\n  {{ Destination_input.text }},\n  {{ DateHeure_picker.selectedDate }}::timestamptz,\n  {{ Places_input.text }}::integer,\n  {{ Places_input.text }}::integer,\n  'ouvert'\n);",
+      "body": "INSERT INTO trajets (conducteur_id, lieu_depart, lieu_arrivee, date_depart, nb_places, places_restantes, statut)\nVALUES (\n  {{ appsmith.store.userId }}::integer,\n  {{ Depart_input.text }},\n  {{ Destination_input.text }},\n  {{ DateHeure_picker.selectedDate }}::timestamptz,\n  {{ Places_input.text }}::integer,\n  {{ Places_input.text }}::integer,\n  'ouvert'\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -1,0 +1,20 @@
+WITH nouvelle AS (
+  INSERT INTO reservations (trajet_id, passager_id, statut)
+  SELECT t.id, {{ appsmith.store.userId }}::integer, 'confirmee'
+  FROM trajets t
+  WHERE t.id = {{ Trajets_table.triggeredRow.id }}::integer
+    AND t.statut = 'ouvert'
+    AND t.places_restantes > 0
+    AND t.conducteur_id <> {{ appsmith.store.userId }}::integer
+    AND NOT EXISTS (
+      SELECT 1 FROM reservations r
+      WHERE r.trajet_id = t.id
+        AND r.passager_id = {{ appsmith.store.userId }}::integer
+        AND r.statut = 'confirmee'
+    )
+  RETURNING trajet_id
+)
+UPDATE trajets
+SET places_restantes = places_restantes - 1
+WHERE id IN (SELECT trajet_id FROM nouvelle)
+RETURNING id;

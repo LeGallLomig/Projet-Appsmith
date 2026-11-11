@@ -1,0 +1,7 @@
+SELECT r.id, t.lieu_depart, t.lieu_arrivee, t.date_depart, r.statut,
+       u.prenom, u.nom, u.telephone
+FROM reservations r
+JOIN trajets t ON t.id = r.trajet_id
+JOIN users u ON u.id = t.conducteur_id
+WHERE r.passager_id = {{ appsmith.store.userId }}::integer
+ORDER BY t.date_depart DESC;

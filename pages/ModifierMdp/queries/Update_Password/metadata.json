@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE public.users\nSET password_hash = crypt({{ NouvMdp_input.text }}, gen_salt('bf'))\nWHERE id = {{ appsmith.store.currentUser.id }}\n  AND password_hash = crypt({{ AncienMdp_input.text }}, password_hash)\nRETURNING id;",
+      "body": "UPDATE public.users\nSET password_hash = crypt({{ NouvMdp_input.text }}, gen_salt('bf'))\nWHERE id = {{ appsmith.store.userId }}::integer\n  AND password_hash = crypt({{ AncienMdp_input.text }}, password_hash)\nRETURNING id;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

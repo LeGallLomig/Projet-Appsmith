@@ -1,16 +1,19 @@
 export default {
-	Connexion_buttononClick () {
-		{
-Login.run().then(() => {
-  if (Login.data.length > 0) {
-    storeValue('userId', Login.data[0].id);
-    navigateTo('MainPage', {}, 'SAME_WINDOW');
-  } else {
-    showAlert('E-mail ou mot de passe incorrect', 'error');
+  async Connexion_buttononClick () {
+    if (!LoginEmail_input.text || !LoginPwd_input.text) {
+      showAlert('Merci de remplir tous les champs', 'warning');
+      return;
+    }
+    try {
+      const res = await Login.run();
+      if (res.length > 0) {
+        await storeValue('userId', res[0].id);
+        navigateTo('MainPage', {}, 'SAME_WINDOW');
+      } else {
+        showAlert('E-mail ou mot de passe incorrect', 'error');
+      }
+    } catch (e) {
+      showAlert('Une erreur est survenue', 'error');
+    }
   }
-}).catch(() => {
-  showAlert('Une erreur est survenue', 'error');
-});
-}
-	}
 }

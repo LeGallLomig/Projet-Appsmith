@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 42,
+  "bottomRow": 39,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -14,21 +14,27 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "7kuf4szwx6",
-  "leftColumn": 18,
+  "leftColumn": 25,
   "minWidth": 120,
   "mobileBottomRow": 42,
   "mobileLeftColumn": 20,
   "mobileRightColumn": 36,
   "mobileTopRow": 38,
   "needsErrorInfo": false,
-  "originalBottomRow": 42,
-  "originalTopRow": 37,
+  "onClick": "{{MdpUtils.changerMdp();}}",
+  "originalBottomRow": 44,
+  "originalTopRow": 39,
   "parentColumnSpace": 19.8125,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -37,9 +43,9 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 34,
+  "rightColumn": 41,
   "text": "Valider",
-  "topRow": 37,
+  "topRow": 35,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "bsbkla7apl",

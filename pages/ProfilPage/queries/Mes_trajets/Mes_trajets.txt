@@ -1,0 +1,4 @@
+SELECT id, lieu_depart, lieu_arrivee, date_depart, nb_places, places_restantes, statut
+FROM trajets
+WHERE conducteur_id = {{ appsmith.store.userId }}::integer
+ORDER BY date_depart DESC;

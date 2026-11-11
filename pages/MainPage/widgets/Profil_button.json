@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 9,
   "boxShadow": "none",
   "buttonColor": "#18181b",
   "buttonVariant": "SECONDARY",
@@ -11,11 +11,7 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "onClick"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -35,7 +31,7 @@
   "mobileRightColumn": 60,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo(\"ProfilPage\")}}",
+  "onClick": "{{JSObject1.Profil_buttononClick();}}",
   "parentColumnSpace": 20.25,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -44,9 +40,9 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 61,
+  "rightColumn": 62,
   "text": "Mon Profil",
-  "topRow": 1,
+  "topRow": 5,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "hn2krzt6uy",
