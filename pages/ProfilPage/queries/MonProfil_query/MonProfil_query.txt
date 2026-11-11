@@ -1,0 +1,1 @@
+SELECT id, email, password_hash, ecole, nom, prenom, telephone, created_at FROM public.users LIMIT 3;

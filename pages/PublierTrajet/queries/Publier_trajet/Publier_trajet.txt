@@ -1,0 +1,10 @@
+INSERT INTO trajets (conducteur_id, lieu_depart, lieu_arrivee, date_depart, nb_places, places_restantes, statut)
+VALUES (
+  {{ appsmith.store.userId }},
+  {{ Depart_input.text }},
+  {{ Destination_input.text }},
+  {{ DateHeure_picker.selectedDate }}::timestamptz,
+  {{ Places_input.text }}::integer,
+  {{ Places_input.text }}::integer,
+  'ouvert'
+);

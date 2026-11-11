@@ -1,0 +1,12 @@
+SELECT
+  *
+FROM
+  public.users
+WHERE
+  "nom" ilike '%{{profil_Table.searchText}}%'
+ORDER BY
+  "{{profil_Table.sortOrder.column || 'id'}}" {{profil_Table.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{profil_Table.pageSize}}
+OFFSET
+  {{profil_Table.pageOffset}}

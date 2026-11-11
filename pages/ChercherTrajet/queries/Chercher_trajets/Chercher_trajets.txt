@@ -1,0 +1,15 @@
+SELECT t.id, t.lieu_depart, t.lieu_arrivee, t.date_depart, t.places_restantes,
+       u.prenom, u.nom, u.telephone, u.email
+FROM trajets t
+JOIN users u ON u.id = t.conducteur_id
+WHERE t.statut = 'ouvert'
+  AND t.places_restantes > 0
+  AND t.date_depart > now()
+  AND t.conducteur_id IS DISTINCT FROM {{ appsmith.store.userId }}::integer
+  AND t.lieu_depart ILIKE '%' || {{ RechDepart_input.text }} || '%'
+  AND (
+    {{ RechDate_picker.selectedDate ? moment(RechDate_picker.selectedDate).format('YYYY-MM-DD') : '' }}::text = ''
+    OR (t.date_depart AT TIME ZONE 'Europe/Paris')::date =
+       NULLIF({{ RechDate_picker.selectedDate ? moment(RechDate_picker.selectedDate).format('YYYY-MM-DD') : '' }}::text, '')::date
+  )
+ORDER BY t.date_depart;

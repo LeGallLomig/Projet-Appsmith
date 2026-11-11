@@ -1,0 +1,10 @@
+SELECT
+  *
+FROM
+  auth.users
+ORDER BY
+  "{{MonProfil_table.sortOrder.column || 'id'}}" {{MonProfil_table.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{MonProfil_table.pageSize}}
+OFFSET
+  {{MonProfil_table.pageOffset}}

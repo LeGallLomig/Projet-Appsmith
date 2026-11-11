@@ -1,0 +1,4 @@
+SELECT id, prenom, nom
+FROM users
+WHERE email = {{ LoginEmail_input.text }}
+  AND password_hash = crypt({{ LoginPwd_input.text }}, password_hash);

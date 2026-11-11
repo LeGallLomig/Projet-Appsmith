@@ -1,0 +1,9 @@
+INSERT INTO users (nom, prenom, email, telephone, password_hash)
+VALUES (
+  {{ LastName_input.text }},
+  {{ Name_input.text }},
+  {{ Email_input.text }},
+  {{ Tel_input.text }},
+  crypt({{ Pwd_input.text }}, gen_salt('bf'))
+)
+RETURNING id;
